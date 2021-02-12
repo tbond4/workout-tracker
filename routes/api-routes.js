@@ -26,7 +26,11 @@ router.put("/api/workouts/:id",(req,res)=>{
     })
 });
 router.get("/api/workouts/range",(req,res)=>{
-
+    Workout.find({ Date: { $gte: Date.now()-7, $lte: Date.now() } }).then(results=>{
+        res.json(results)
+    }).catch(err=>{
+        res.status(500).json(err);
+    })
 });
 
 
