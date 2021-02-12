@@ -1,4 +1,7 @@
+const { workout } = require("../models");
+
 const router =require("express").Router();
+const {workout}=require("../models");
 
 router.get("/api/workouts",(req,res)=>{
 
